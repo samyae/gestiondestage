@@ -1,0 +1,136 @@
+/* Conteneur des deux sections (cartes) */
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les sections */
+    gap: 40px; /* Espace entre les deux cartes */
+    padding: 20px;
+    flex-wrap: wrap; /* Permet aux cartes de se réorganiser sur les petits écrans */
+}
+
+/* Style général de chaque section */
+.signup-section, .signin-section {
+    flex: 1; /* Chaque section prend 50% de la largeur par défaut */
+    max-width: 48%; /* Limite la largeur des sections à 48% */
+    padding: 20px;
+    border: 2px solid #008f84;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Titre principal */
+h1, h2 {
+    text-align: center;
+    color: #008f84;
+}
+
+/* Formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #008f84;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #007966;
+}
+
+/* Responsive - petits écrans */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Les cartes se réorganisent verticalement sur les petits écrans */
+        gap: 20px;
+    }
+
+    .signup-section, .signin-section {
+        max-width: 100%;
+    }
+}
+
+
+/* Style de l'icône dans le bouton */
+.signin-section .btn-login i {
+    margin-right: 8px; /* Espace entre l'icône et le texte */
+}
+
+/* Responsive - petits écrans */
+@media (max-width: 768px) {
+    .signin-section {
+        max-width: 100%; /* Remplir toute la largeur sur les petits écrans */
+        padding: 20px; /* Moins de padding sur les petits écrans */
+    }
+}
+/* Style de la carte */
+.signin-section {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les sections */
+    gap: 40px; /* Espace entre les deux cartes */
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    background-color: #f4f4f4; /* Couleur de fond de la carte */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée de la carte */
+}
+
+/* Titre dans la section Sign In */
+.signin-section h2 {
+    color: #008f84;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraphe dans la section Sign In */
+.signin-section p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Bouton de connexion */
+.signin-section .btn-login {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007966;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.signin-section .btn-login:hover {
+    background-color: #005f4f; /* Couleur au survol */
+}
+
+

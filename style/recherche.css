@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* Styles de base pour la navbar */
+.navbar {
+    position: fixed; /* La rend fixe en haut de la page */
+    top: 0; /* Fixe la navbar en haut */
+    left: 0;
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    background: linear-gradient(75deg, #6D5B98, #8B79DA);
+    padding: 1.2rem 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Assure que la navbar est au-dessus du contenu */
+}
+
+/* Style du logo */
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style des liens */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+/* Effet de survol sous les liens */
+.nav-links li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #FFD700;
+    bottom: -6px;
+    left: 0;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+/* Boutons de connexion et inscription */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-signup {
+    background-color: #FFD700;
+    color: #6D5B98;
+}
+
+.btn-signup:hover {
+    background-color: #FFD35B;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-login:hover {
+    background-color: white;
+    color: #6D5B98;
+}
+
+/* Styles pour l'icône de menu sur mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .nav-links,
+    .auth-buttons {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(75deg, #6D5B98, #8B79DA);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem;
+    }
+
+    .auth-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active + .nav-links,
+    .menu-toggle.active + .nav-links + .auth-buttons {
+        display: flex;
+    }
+}
+
+/* Marges pour le contenu afin de ne pas chevaucher la navbar */
+body {
+    padding-top: 100px; /* Ajuste la valeur en fonction de la hauteur de la navbar */
+}
+
+/* Conteneur principal centré */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    gap: 1rem; /* Espacement entre les éléments */
+    margin: 2rem 0;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+
+/* Style pour les champs de sélection et la barre de recherche */
+.search-input,
+.sector-select,
+.location-select,
+.type-select {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 2px solid #FFD700; /* Bordure dorée visible */
+    background-color: #fff;
+    color: #333;
+    width: 180px; /* Ajusté pour mieux correspondre côte à côte */
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Effet au focus */
+.search-input:focus,
+.sector-select:focus,
+.location-select:focus,
+.type-select:focus {
+    border-color: #6D5B98;
+    box-shadow: 0 0 5px rgba(109, 91, 152, 0.6);
+}
+
+/* Effet au survol */
+.search-input:hover,
+.sector-select:hover,
+.location-select:hover,
+.type-select:hover {
+    border-color: #FFD35B;
+    background-color: #f9f9f9;
+}
+
+/* Style du bouton de recherche */
+.search-btn {
+    background-color: #6D5B98;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 180px; /* Largeur uniforme pour les boutons et champs */
+}
+
+/* Effet au survol du bouton */
+.search-btn:hover {
+    background-color: #FFD35B;
+    transform: scale(1.05);
+}
+
+
+/* Section Meilleurs Stages */
+.best-internships-section {
+    background-color: #f9f9f9;
+    padding: 4rem 8%;
+    text-align: center;
+}
+
+.best-internships-section h2 {
+    font-size: 2.5rem;
+    color: #6D5B98;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.internships-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.internship-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 30%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.internship-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.internship-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #6D5B98;
+    font-weight: 600;
+}
+
+.internship-card p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Section Meilleurs CVs */
+.best-cvs-section {
+    background-color: #f4f7fc;
+    padding: 4rem 8%;
+    text-align: center;
+}
+
+.best-cvs-section h2 {
+    font-size: 2.5rem;
+    color: #6D5B98;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.cvs-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cv-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 30%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cv-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #6D5B98;
+    font-weight: 600;
+}
+
+.cv-card p {
+    font-size: 1.1rem;
+    color: #777;
+}
+/* Footer global */
+.footer {
+    background-color: #6D5B98;
+    color: #fff;
+    padding: 2rem 10%;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 45%;
+}
+
+.footer-section h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Formulaire simplifié */
+.complaints-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.complaints-form input,
+.complaints-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.complaints-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.complaints-form button {
+    background-color: #FFD700;
+    color: #6D5B98;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.complaints-form button:hover {
+    background-color: #FFD35B;
+}
+
+/* Icônes des réseaux sociaux */
+.social-icons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #FFD700;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FFD35B;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ddd;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+}

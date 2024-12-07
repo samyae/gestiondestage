@@ -1,0 +1,221 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 80px; /* Espace pour éviter que le contenu soit masqué par la navbar */
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(75deg, #6D5B98, #8B79DA);
+    padding: 1rem 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-left: 2.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #FFD700;
+  }
+  
+  /* Active Link */
+  .nav-links a.active {
+    color: #FFD700;
+    font-weight: bold;
+  }
+  
+  /* Auth buttons */
+  .auth-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-signup {
+    background-color: #FFD700;
+    color: #6D5B98;
+  }
+  
+  .btn-signup:hover {
+    background-color: #FFD35B;
+  }
+  
+  .btn-login {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .btn-login:hover {
+    background-color: white;
+    color: #6D5B98;
+  }
+  
+  /* Form Container */
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #6D5B98;
+    margin-bottom: 2rem;
+  }
+  
+  form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  form button.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(75deg, #6D5B98, #8B79DA);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button.btn:hover {
+    background-color: #6D5BA8;
+  }
+  
+  /* Footer */
+  footer {
+    background: linear-gradient(75deg, #6D5B98, #8B79DA);
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  
+  .footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  
+  .footer-sections > div {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 200px;
+  }
+  
+  .footer-sections h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #FFD700;
+  }
+  
+  .footer-sections ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-sections ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-sections ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-sections ul li a:hover {
+    color: #FFD700;
+  }
+  footer a:hover {
+    color: #f0a500 !important;
+    text-decoration: underline !important;
+    transform: scale(1.05) !important;
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar .logo {
+      font-size: 1.8rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .footer-sections > div {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,192 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 80px; /* Préserver l'espace pour la navbar */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(75deg, #6D5B98, #8B79DA); /* Dégradé violet */
+    padding: 1rem 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700; /* Couleur dorée */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.nav-links a.active {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Section principale */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #6D5B98; /* Violet */
+    margin-bottom: 20px;
+}
+
+.about-mission {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #555;
+    padding: 10px 20px;
+}
+
+.about-mission p {
+    margin-bottom: 20px;
+}
+
+.about-mission h3 {
+    color: #FFD700; /* Doré */
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.about-mission ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-mission ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(75deg, #6D5B98, #8B79DA); /* Même dégradé violet que la navbar */
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer-sections > div {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 200px;
+}
+
+.footer-sections h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #FFD700; /* Doré */
+}
+
+.footer-sections ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-sections ul li {
+    margin-bottom: 10px;
+}
+
+.footer-sections ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-sections ul li a:hover {
+    color: #FFD700;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+footer a:hover {
+    color: #f0a500 !important;
+    text-decoration: underline !important;
+    transform: scale(1.05) !important;
+  }
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .footer-sections > div {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}

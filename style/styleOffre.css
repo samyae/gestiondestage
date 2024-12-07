@@ -1,0 +1,227 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(75deg, #6D5B98, #8B79DA); /* Dégradé violet */
+  padding: 1rem 3rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FFD700; /* Jaune élégant */
+}
+
+/* Active Link */
+.nav-links a.active {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* Auth buttons */
+.auth-buttons .btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-signup {
+  background-color: #FFD700;
+  color: #6D5B98;
+}
+
+.btn-signup:hover {
+  background-color: #FFD35B;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-login:hover {
+  background-color: white;
+  color: #6D5B98;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(75deg, #6D5B98, #8B79DA); /* Dégradé violet similaire à la navbar */
+  color: white;
+  padding: 40px 20px;
+  margin-top: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-sections > div {
+  flex: 1 1 calc(25% - 20px);
+  min-width: 200px;
+}
+
+.footer-sections h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.footer-sections ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-sections ul li {
+  margin-bottom: 10px;
+}
+
+.footer-sections ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-sections ul li a:hover {
+  color: #ffcc00;
+}
+/* Changer la couleur du lien au survol */
+/* Effet de survol */
+footer a:hover {
+  color: #f0a500 !important;
+  text-decoration: underline !important;
+  transform: scale(1.05) !important;
+}
+
+
+
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover .social-icon-img {
+  transform: scale(1.1);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar .logo {
+      font-size: 1.6rem;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .footer-sections > div {
+      flex: 1 1 100%;
+      text-align: center;
+  }
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 450px; /* Ajuster la hauteur des images */
+  object-fit: cover; /* Assure que les images gardent leur forme sans déformer */
+}
+/* Agrandir et centrer le bouton */
+.btn-primary {
+  width: 50%; /* Augmenter la largeur du bouton */
+  margin: 0 auto; /* Centrer horizontalement */
+  display: block; /* Forcer le bouton à être un bloc */
+  padding: 12px 20px; /* Augmenter le padding pour le rendre plus visible */
+  font-size: 18px; /* Agrandir le texte */
+  text-align: center; /* Centrer le texte dans le bouton */
+}
+/* Deuxième colonne (Description détaillée de l'offre) avec espacement et couleur pour les titres */
+.col-lg-8.col-md-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacement des éléments */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%; /* Assurer que la colonne prend toute la hauteur disponible */
+}
+
+.job-description {
+  flex-grow: 1; /* Permet de faire en sorte que cette section prenne de l'espace */
+}
+
+/* Agrandir et centrer le bouton */
+.btn-primary {
+  width: 50%; /* Augmenter la largeur du bouton */
+  margin: 20px auto; /* Centrer horizontalement et ajouter un peu d'espacement en haut et en bas */
+  display: block; /* Forcer le bouton à être un bloc */
+  padding: 12px 20px; /* Augmenter le padding pour le rendre plus visible */
+  font-size: 18px; /* Agrandir le texte */
+  text-align: center; /* Centrer le texte dans le bouton */
+}
+.carousel-item img {
+  width: 100%;
+  height: 450px; /* Ajuster la hauteur des images */
+  object-fit: cover; /* Assure que les images gardent leur forme sans déformation */
+}
+
+/* Espace entre les images du carrousel */
+.carousel-inner {
+  padding: 10px;
+}
